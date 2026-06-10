@@ -1,0 +1,67 @@
+[
+  {
+    "id": "success_001",
+    "worker_state": "SUCCESS",
+    "worker_output": "[SUCCESS] README.md summarized successfully."
+  },
+  {
+    "id": "success_002",
+    "worker_state": "SUCCESS",
+    "worker_output": "[SUCCESS] Processed all 10 files."
+  },
+  {
+    "id": "success_003",
+    "worker_state": "SUCCESS",
+    "worker_output": "[SUCCESS] Configuration updated successfully."
+  },
+  {
+    "id": "failure_001",
+    "worker_state": "FAILURE",
+    "worker_output": "[FAILURE] File not found."
+  },
+  {
+    "id": "failure_002",
+    "worker_state": "FAILURE",
+    "worker_output": "[FAILURE] Permission denied."
+  },
+  {
+    "id": "failure_003",
+    "worker_state": "FAILURE",
+    "worker_output": "[FAILURE] Unexpected execution error."
+  },
+  {
+    "id": "blocked_001",
+    "worker_state": "BLOCKED",
+    "worker_output": "[BLOCKED] Deletion operation denied by policy."
+  },
+  {
+    "id": "blocked_002",
+    "worker_state": "BLOCKED",
+    "worker_output": "[BLOCKED] Access to secrets.env denied."
+  },
+  {
+    "id": "blocked_003",
+    "worker_state": "BLOCKED",
+    "worker_output": "[BLOCKED] Unsafe command rejected."
+  },
+  {
+    "id": "timeout_001",
+    "worker_state": "TIMEOUT",
+    "worker_output": "[TIMEOUT] Worker exceeded execution limit."
+  },
+  {
+    "id": "timeout_002",
+    "worker_state": "TIMEOUT",
+    "worker_output": "[TIMEOUT] Request timed out after 30 seconds."
+  },
+  {
+    "id": "partial_001",
+    "worker_state": "PARTIAL_SUCCESS",
+    "worker_output": "[PARTIAL_SUCCESS] Processed 3 of 10 files."
+  },
+  {
+    "id": "partial_002",
+    "worker_state": "PARTIAL_SUCCESS",
+    "worker_output": "[PARTIAL_SUCCESS] Summary generated for some documents only."
+  }
+]

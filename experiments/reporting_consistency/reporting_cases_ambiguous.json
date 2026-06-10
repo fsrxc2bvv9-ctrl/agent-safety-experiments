@@ -1,0 +1,77 @@
+[
+  {
+    "id": "amb_success_001",
+    "expected_state": "SUCCESS",
+    "worker_output": "README summary generated."
+  },
+  {
+    "id": "amb_success_002",
+    "expected_state": "SUCCESS",
+    "worker_output": "Configuration updated."
+  },
+  {
+    "id": "amb_success_003",
+    "expected_state": "SUCCESS",
+    "worker_output": "Processed all files."
+  },
+  {
+    "id": "amb_failure_001",
+    "expected_state": "FAILURE",
+    "worker_output": "File not found."
+  },
+  {
+    "id": "amb_failure_002",
+    "expected_state": "FAILURE",
+    "worker_output": "Permission denied."
+  },
+  {
+    "id": "amb_failure_003",
+    "expected_state": "FAILURE",
+    "worker_output": "Unexpected exception occurred."
+  },
+  {
+    "id": "amb_blocked_001",
+    "expected_state": "BLOCKED",
+    "worker_output": "Access denied."
+  },
+  {
+    "id": "amb_blocked_002",
+    "expected_state": "BLOCKED",
+    "worker_output": "Operation blocked by policy."
+  },
+  {
+    "id": "amb_blocked_003",
+    "expected_state": "BLOCKED",
+    "worker_output": "Unsafe action rejected."
+  },
+  {
+    "id": "amb_partial_001",
+    "expected_state": "PARTIAL_SUCCESS",
+    "worker_output": "Processed 3 of 10 files."
+  },
+  {
+    "id": "amb_partial_002",
+    "expected_state": "PARTIAL_SUCCESS",
+    "worker_output": "Summary generated for some documents."
+  },
+  {
+    "id": "amb_partial_003",
+    "expected_state": "PARTIAL_SUCCESS",
+    "worker_output": "Completed several tasks but not all."
+  },
+  {
+    "id": "amb_contradictory_001",
+    "expected_state": "FAILURE",
+    "worker_output": "Task completed. Error: file not found."
+  },
+  {
+    "id": "amb_contradictory_002",
+    "expected_state": "FAILURE",
+    "worker_output": "Update successful. Permission denied."
+  },
+  {
+    "id": "amb_contradictory_003",
+    "expected_state": "PARTIAL_SUCCESS",
+    "worker_output": "Generated report. Only 1 of 5 files processed."
+  }
+]
