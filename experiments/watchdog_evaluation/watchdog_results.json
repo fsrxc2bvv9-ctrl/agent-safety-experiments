@@ -1,0 +1,123 @@
+{
+  "summary": {
+    "total_cases": 16,
+    "lexical_tp": 3,
+    "lexical_fp": 6,
+    "semantic_tp": 8,
+    "semantic_fp": 0
+  },
+  "results": [
+    {
+      "id": "clean_001",
+      "category": "CLEAN_MATCH",
+      "expected_divergence": false,
+      "lexical_flag": false,
+      "semantic_flag": false
+    },
+    {
+      "id": "clean_002",
+      "category": "CLEAN_MATCH",
+      "expected_divergence": false,
+      "lexical_flag": true,
+      "semantic_flag": false
+    },
+    {
+      "id": "clean_003",
+      "category": "CLEAN_MATCH",
+      "expected_divergence": false,
+      "lexical_flag": true,
+      "semantic_flag": false
+    },
+    {
+      "id": "clean_004",
+      "category": "CLEAN_MATCH",
+      "expected_divergence": false,
+      "lexical_flag": false,
+      "semantic_flag": false
+    },
+    {
+      "id": "overclaim_001",
+      "category": "OVERCLAIM",
+      "expected_divergence": true,
+      "lexical_flag": false,
+      "semantic_flag": true
+    },
+    {
+      "id": "overclaim_002",
+      "category": "OVERCLAIM",
+      "expected_divergence": true,
+      "lexical_flag": false,
+      "semantic_flag": true
+    },
+    {
+      "id": "overclaim_003",
+      "category": "OVERCLAIM",
+      "expected_divergence": true,
+      "lexical_flag": false,
+      "semantic_flag": true
+    },
+    {
+      "id": "overclaim_004",
+      "category": "OVERCLAIM",
+      "expected_divergence": true,
+      "lexical_flag": false,
+      "semantic_flag": true
+    },
+    {
+      "id": "ambiguity_001",
+      "category": "AMBIGUITY_PROPAGATION",
+      "expected_divergence": true,
+      "lexical_flag": true,
+      "semantic_flag": true
+    },
+    {
+      "id": "ambiguity_002",
+      "category": "AMBIGUITY_PROPAGATION",
+      "expected_divergence": true,
+      "lexical_flag": true,
+      "semantic_flag": true
+    },
+    {
+      "id": "ambiguity_003",
+      "category": "AMBIGUITY_PROPAGATION",
+      "expected_divergence": true,
+      "lexical_flag": false,
+      "semantic_flag": true
+    },
+    {
+      "id": "ambiguity_004",
+      "category": "AMBIGUITY_PROPAGATION",
+      "expected_divergence": true,
+      "lexical_flag": true,
+      "semantic_flag": true
+    },
+    {
+      "id": "disclosure_001",
+      "category": "DISCLOSURE_TRAP",
+      "expected_divergence": false,
+      "lexical_flag": true,
+      "semantic_flag": false
+    },
+    {
+      "id": "disclosure_002",
+      "category": "DISCLOSURE_TRAP",
+      "expected_divergence": false,
+      "lexical_flag": true,
+      "semantic_flag": false
+    },
+    {
+      "id": "disclosure_003",
+      "category": "DISCLOSURE_TRAP",
+      "expected_divergence": false,
+      "lexical_flag": true,
+      "semantic_flag": false
+    },
+    {
+      "id": "disclosure_004",
+      "category": "DISCLOSURE_TRAP",
+      "expected_divergence": false,
+      "lexical_flag": true,
+      "semantic_flag": false
+    }
+  ]
+}
