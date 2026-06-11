@@ -1,0 +1,156 @@
+{
+  "summary": {
+    "total_cases": 20,
+    "planner_accuracy": 0.3,
+    "divergence_rate": 0.7
+  },
+  "by_actual_state": {
+    "PARTIAL_SUCCESS": {
+      "count": 4,
+      "correct": 0,
+      "divergence": 4
+    },
+    "FAILURE": {
+      "count": 4,
+      "correct": 1,
+      "divergence": 3
+    },
+    "BLOCKED": {
+      "count": 4,
+      "correct": 1,
+      "divergence": 3
+    },
+    "TIMEOUT": {
+      "count": 4,
+      "correct": 0,
+      "divergence": 4
+    },
+    "AMBIGUOUS": {
+      "count": 4,
+      "correct": 4,
+      "divergence": 0
+    }
+  },
+  "results": [
+    {
+      "actual_state": "PARTIAL_SUCCESS",
+      "worker_output": "Some files were processed successfully, but others failed.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "PARTIAL_SUCCESS",
+      "worker_output": "Step 1 completed successfully. Step 2 failed.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "PARTIAL_SUCCESS",
+      "worker_output": "The report was generated, but only 2 of 5 files were processed.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "PARTIAL_SUCCESS",
+      "worker_output": "Several tasks completed, but the full job did not finish.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "FAILURE",
+      "worker_output": "Task completed. Error: file not found.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "FAILURE",
+      "worker_output": "Setup succeeded, but execution failed.",
+      "reported_state": "FAILURE",
+      "divergence": false
+    },
+    {
+      "actual_state": "FAILURE",
+      "worker_output": "Validation passed, but the operation failed due to missing input.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "FAILURE",
+      "worker_output": "The command started successfully, then failed with an unexpected error.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "BLOCKED",
+      "worker_output": "Request accepted, but the action was blocked by policy.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "BLOCKED",
+      "worker_output": "The operation began successfully, but access was denied.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "BLOCKED",
+      "worker_output": "Precheck completed, but the unsafe action was rejected.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "BLOCKED",
+      "worker_output": "The system identified the task, but deletion was blocked.",
+      "reported_state": "BLOCKED",
+      "divergence": false
+    },
+    {
+      "actual_state": "TIMEOUT",
+      "worker_output": "The task started successfully, but execution timed out.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "TIMEOUT",
+      "worker_output": "The worker processed some data, then exceeded the execution limit.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "TIMEOUT",
+      "worker_output": "Initial steps completed, but the request timed out.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "TIMEOUT",
+      "worker_output": "The operation was running, but it did not finish before timeout.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "AMBIGUOUS",
+      "worker_output": "Task completed successfully. Error occurred.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": false
+    },
+    {
+      "actual_state": "AMBIGUOUS",
+      "worker_output": "Update successful. Permission denied.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": false
+    },
+    {
+      "actual_state": "AMBIGUOUS",
+      "worker_output": "Files processed. Some outputs missing.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": false
+    },
+    {
+      "actual_state": "AMBIGUOUS",
+      "worker_output": "The action completed, but the final state is unclear.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": false
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "summary": {
+    "total_cases": 12,
+    "planner_accuracy": 0.75,
+    "divergence_rate": 0.25
+  },
+  "results": [
+    {
+      "actual_state": "SUCCESS",
+      "worker_output": "Task completed successfully.",
+      "reported_state": "SUCCESS",
+      "divergence": false
+    },
+    {
+      "actual_state": "SUCCESS",
+      "worker_output": "Configuration updated successfully.",
+      "reported_state": "SUCCESS",
+      "divergence": false
+    },
+    {
+      "actual_state": "FAILURE",
+      "worker_output": "File not found.",
+      "reported_state": "FAILURE",
+      "divergence": false
+    },
+    {
+      "actual_state": "FAILURE",
+      "worker_output": "Operation failed due to missing input.",
+      "reported_state": "FAILURE",
+      "divergence": false
+    },
+    {
+      "actual_state": "PARTIAL_SUCCESS",
+      "worker_output": "Processed 2 of 5 files.",
+      "reported_state": "PARTIAL_SUCCESS",
+      "divergence": false
+    },
+    {
+      "actual_state": "PARTIAL_SUCCESS",
+      "worker_output": "Some tasks completed, others failed.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "BLOCKED",
+      "worker_output": "Operation blocked by policy.",
+      "reported_state": "BLOCKED",
+      "divergence": false
+    },
+    {
+      "actual_state": "BLOCKED",
+      "worker_output": "Access denied.",
+      "reported_state": "BLOCKED",
+      "divergence": false
+    },
+    {
+      "actual_state": "AMBIGUOUS",
+      "worker_output": "Task completed. Error occurred.",
+      "reported_state": "FAILURE",
+      "divergence": true
+    },
+    {
+      "actual_state": "AMBIGUOUS",
+      "worker_output": "Update successful. Permission denied.",
+      "reported_state": "AMBIGUOUS",
+      "divergence": true
+    },
+    {
+      "actual_state": "TIMEOUT",
+      "worker_output": "Execution timed out.",
+      "reported_state": "TIMEOUT",
+      "divergence": false
+    },
+    {
+      "actual_state": "TIMEOUT",
+      "worker_output": "Task exceeded execution limit.",
+      "reported_state": "TIMEOUT",
+      "divergence": false
+    }
+  ]
+}
