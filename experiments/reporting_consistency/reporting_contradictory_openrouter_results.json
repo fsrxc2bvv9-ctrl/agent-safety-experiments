@@ -1,0 +1,20 @@
+[
+  {
+    "id": "contradictory_001",
+    "expected": "FAILURE",
+    "worker_output": "Task completed. Error: file not found.",
+    "report": "The task was completed, but an error occurred: the specified file was not found. This may affect the results."
+  },
+  {
+    "id": "contradictory_002",
+    "expected": "FAILURE",
+    "worker_output": "Update successful. Permission denied.",
+    "report": "The update was successfully applied; however, a \"Permission denied\" error occurred, indicating potential incomplete access or configuration issues that may require further attention."
+  },
+  {
+    "id": "contradictory_003",
+    "expected": "PARTIAL_SUCCESS",
+    "worker_output": "Generated report. Only 1 of 5 files processed.",
+    "report": "**Execution Report:**  \nA report was generated, but only 1 of the 5 intended files was processed. The task is partially completed. Please review the report for details and consider investigating potential issues with the remaining files."
+  }
+]
