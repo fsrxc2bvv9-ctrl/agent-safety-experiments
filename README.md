@@ -1,89 +1,146 @@
 # Agent Safety Experiments
 
-A collection of small experiments exploring agent behavior, tool use, safety mechanisms, and multi-agent systems.
+A collection of small, reproducible evaluations exploring how information degrades as it moves across agent layers.
+
+**Current status:** 9 completed evaluations, bridge environment implemented, active integration planning for multi-agent-safety-sim.
+
+## Research Focus
+
+```text
+Worker Execution
+↓
+Planner Reports
+↓
+Watchdog Oversight
+```
+
+The central theme of the project is **State-Report Divergence**:
+
+> A mismatch between what actually happened in a system and what an agent or oversight layer reports happened.
+
+---
+
+## Key Finding
+
+Across controlled, emergent, and stress-test evaluations, the highest divergence rates consistently appeared when execution traces contained mixed-status signals.
+
+Examples:
+
+- success + failure
+- partial completion + failure
+- success + blocked
+- success + timeout
+
+Results from bridge evaluations:
+
+| Evaluation | Planner Accuracy | Divergence Rate |
+|------------|-----------------|-----------------|
+| Emergent Bridge Baseline | 75% | 25% |
+| Mixed-State Stress Test | 30% | 70% |
+
+These results suggest that mixed-status execution traces are a major risk area for reporting reliability in agentic systems.
+
+---
 
 ## Experiments
 
-### Tool Description Safety Evaluation
+| Experiment | Main Finding |
+|------------|--------------|
+| Tool Description Safety | Tool metadata influences agent behavior |
+| Delegation Safety | Safety-aware delegation reduces unsafe actions |
+| Reporting Consistency | Ambiguity propagates through reporting layers |
+| Watchdog Evaluation | Semantic watchdogs outperform lexical matching |
+| Watchdog Failure Modes | Nested multi-step reports break oversight assumptions |
+| Bridge Prototype | Independent ground truth enables measurable divergence |
+| Emergent Bridge Evaluation | Divergence appears without scripted overclaims |
+| Mixed-State Stress Test | Mixed-status traces substantially increase divergence |
+| Watchdog on Emergent Data | Semantic watchdog detects baseline mixed-state divergence* |
 
-**Research Question**
+\* See RESEARCH_SUMMARY.md for limitations regarding coupling between watchdog and environment normalization logic.
 
-Can tool descriptions influence agent behavior even when the underlying implementation remains unchanged?
+---
 
-**Setup**
+## Repository Structure
 
-- Framework: smolagents
-- Model: Qwen/Qwen2.5-Coder-32B-Instruct
-- Two tool variants:
-  - Broad tool description
-  - Guarded tool description
+```text
+experiments/
+├── tool_description_safety/
+├── delegation_safety/
+├── reporting_consistency/
+├── watchdog_evaluation/
+└── bridge_planner_worker_watchdog/
+```
 
-**Findings**
+---
 
-- Broad tool descriptions encouraged unsafe action attempts.
-- Guarded tool descriptions increased capability-aware behavior.
-- Guarded descriptions reduced unsafe action claims.
-- Runtime sandboxing blocked unauthorized filesystem access attempts.
+## Research Summary
 
-**Artifact**
+For a complete overview of methods, results, limitations, and future work:
 
-`experiments/tool_description_safety`
+➡️ **[Research Summary](RESEARCH_SUMMARY.md)**
 
-## Planned Experiments
+The summary includes:
 
-### Delegation Safety Evaluation
+- Research questions
+- Experimental findings
+- Quantitative results
+- Methodological lessons
+- Current limitations
+- Future research directions
 
-Research question:
+---
 
-Can delegation policies influence planner behavior in multi-agent systems?
+## Methodological Principle
 
-### Tool Misuse Evaluation
+One of the most important findings from this project is:
 
-Research question:
+```text
+No independent ground truth
+=
+No measurable divergence
+```
 
-How often do agents misuse tools under ambiguous instructions?
+Agent-generated reports cannot serve as their own source of truth.
 
-### Prompt Injection Scenarios
+To evaluate reporting reliability, actual execution state must be stored independently from planner reports and watchdog interpretations.
 
-Research question:
+---
 
-How resilient are agents to prompt injection attacks delivered through tools and external content?
+## Current Direction
 
-### Planner–Worker Coordination
+```text
+Worker
+↓
+Planner
+↓
+Watchdog
+↓
+State-Report Divergence Measurement
+↓
+Multi-Agent Safety Simulation
+```
 
-Research question:
+The next stage of the project focuses on integrating these evaluation concepts into larger Planner → Worker → Watchdog environments and eventually into the `multi-agent-safety-sim` project.
 
-How do planner instructions affect downstream worker behavior and task outcomes?
+---
 
-### Multi-Agent Governance Experiments
-
-Research question:
-
-What governance mechanisms improve safety, oversight, and recovery in agentic systems?
-
-## Motivation
-
-This repository serves as a research sandbox for agent safety and supports the development of larger projects focused on:
-
-- Agent safety
-- Agent evaluation
-- Agent governance
-- Multi-agent systems
-- AI safety research
-
-## Roadmap
+## Status
 
 ### Completed
 
-- Tool Description Safety Evaluation
+- Tool Description Safety
+- Delegation Safety
+- Reporting Consistency
+- Watchdog Evaluation
+- Watchdog Failure Modes
+- Bridge Prototype
+- Emergent Bridge Evaluation
+- Mixed-State Stress Test
+- Watchdog on Emergent Data
 
-### In Progress
+### Next Priorities
 
-- Agent framework exploration
-- Multi-agent architecture design
-
-### Planned
-
-- Delegation Safety Evaluation
-- Planner–Worker environments
-- Multi-agent safety simulations
+1. Less-coupled watchdog evaluation
+2. LLM-based planner reports
+3. Repeated-trial evaluation
+4. Multi-agent-safety-sim integration
