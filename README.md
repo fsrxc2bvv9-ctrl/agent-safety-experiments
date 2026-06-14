@@ -2,7 +2,7 @@
 
 A collection of small, reproducible evaluations exploring how information degrades as it moves across agent layers.
 
-**Current status:** 9 completed evaluations, bridge environment implemented, active integration planning for multi-agent-safety-sim.
+**Current status:** 9 completed evaluations, Phase 2 Oversight Signal Study completed, Findings 005–007 documented, and Phase 3 integration into multi-agent-safety-sim underway.
 
 ## Research Focus
 
@@ -42,6 +42,30 @@ These results suggest that mixed-status execution traces are a major risk area f
 
 ---
 
+## Additional Findings
+
+### Finding 005
+
+Execution traces substantially reduce honest-ambiguity false positives compared to report-only oversight.
+
+### Finding 006
+
+Most behavioral oversight value survives removal of explicit final-state labels, suggesting that watchdogs can extract meaningful information from execution traces rather than relying solely on outcome markers.
+
+### Finding 007
+
+Partial-progress signals provide the largest share of behavioral oversight value. Recovery signals contribute additional value, while timeout and warning signals showed minimal impact on the current evaluation set.
+
+For detailed methodology, ablation studies, limitations, and reproducibility notes, see:
+
+- `FINDINGS.md`
+- `RESEARCH_SUMMARY.md`
+- `OVERSIGHT_SIGNAL_EXPERIMENT.md`
+- `TRACE_ABLATION_EXPERIMENT.md`
+- `TRACE_WITHOUT_FINAL_STATE_EXPERIMENT.md`
+
+---
+
 ## Experiments
 
 | Experiment | Main Finding |
@@ -56,7 +80,7 @@ These results suggest that mixed-status execution traces are a major risk area f
 | Mixed-State Stress Test | Mixed-status traces substantially increase divergence |
 | Watchdog on Emergent Data | Semantic watchdog detects baseline mixed-state divergence* |
 
-\* See RESEARCH_SUMMARY.md for limitations regarding coupling between watchdog and environment normalization logic.
+\* See `RESEARCH_SUMMARY.md` for limitations regarding coupling between watchdog and environment normalization logic.
 
 ---
 
@@ -111,11 +135,13 @@ To evaluate reporting reliability, actual execution state must be stored indepen
 ```text
 Worker
 ↓
-Planner
+Planner Report
 ↓
-Watchdog
+Watchdog Oversight
 ↓
 State-Report Divergence Measurement
+↓
+Oversight Evaluation
 ↓
 Multi-Agent Safety Simulation
 ```
@@ -126,7 +152,23 @@ The next stage of the project focuses on integrating these evaluation concepts i
 
 ## Status
 
-### Completed
+### Phase 2 Status
+
+✅ Phase 2 Oversight Signal Study completed
+
+✅ Findings 005–007 documented
+
+✅ Research summary published
+
+✅ Bridge architecture validated
+
+✅ Integration plan defined
+
+🔄 Phase 3 integration in progress
+
+---
+
+### Completed Experiments
 
 - Tool Description Safety
 - Delegation Safety
@@ -138,9 +180,21 @@ The next stage of the project focuses on integrating these evaluation concepts i
 - Mixed-State Stress Test
 - Watchdog on Emergent Data
 
-### Next Priorities
+---
 
-1. Less-coupled watchdog evaluation
-2. LLM-based planner reports
-3. Repeated-trial evaluation
-4. Multi-agent-safety-sim integration
+## Next Priorities
+
+### Phase 3 Integration
+
+- Environment-owned ground truth
+- Explicit observability levels
+- Planner → Worker → Watchdog packaged workflow
+- State-Report Divergence measurement inside simulator
+- Reproduction of Findings 005–007 inside package architecture
+
+### Future Research
+
+- Delegation-chain scenarios
+- LLM-based planners
+- Stochastic evaluation
+- Larger evaluation datasets
